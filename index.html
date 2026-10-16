@@ -1,304 +1,204 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Örnek Dijital Menü</title>
+<meta name="theme-color" content="#080808">
+<title>Şerzan Özekinci | Özekinci Dijital</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f7f5f2;
-    color:#222;
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #080808;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-header{
-    background:#171717;
-    color:white;
-    text-align:center;
-    padding:30px 20px;
+.card {
+  width: 100%;
+  max-width: 390px;
+  padding: 28px 22px;
+  background: linear-gradient(145deg, #1b1b1b, #0b0b0b);
+  border: 1px solid #b89445;
+  border-radius: 22px;
+  box-shadow: 0 12px 40px #000;
 }
 
-header h1{
-    font-size:30px;
-    margin-bottom:8px;
+.logo {
+  text-align: center;
+  color: #d8b66a;
+  font-size: 12px;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
 }
 
-header p{
-    color:#bbb;
+h1 {
+  text-align: center;
+  font-size: 25px;
+  margin: 0 0 8px;
 }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:25px 15px 50px;
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 32px;
 }
 
-.category{
-    margin-bottom:35px;
+.label {
+  color: #b9a16e;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
 }
 
-.category-title{
-    font-size:24px;
-    margin-bottom:15px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
-.menu-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+.name {
+  flex: 1;
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
-.item{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+.iban {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  background: #202020;
+  border: 1px solid #383838;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
-.item img{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-    display:block;
+.copy-small {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #d8b66a;
+  border-radius: 10px;
+  background: #d8b66a;
+  color: #111;
+  font-size: 21px;
+  cursor: pointer;
 }
 
-.item-content{
-    padding:15px;
+.copy-small:active {
+  transform: scale(0.96);
 }
 
-.item h3{
-    font-size:18px;
-    margin-bottom:6px;
+.note {
+  text-align: center;
+  color: #999;
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 12px;
 }
 
-.item p{
-    color:#777;
-    font-size:14px;
-    line-height:1.4;
-    margin-bottom:12px;
-}
-
-.price{
-    font-size:18px;
-    font-weight:bold;
-}
-
-.contact{
-    background:#171717;
-    color:white;
-    text-align:center;
-    border-radius:20px;
-    padding:25px;
-    margin-top:20px;
-}
-
-.contact h2{
-    margin-bottom:10px;
-}
-
-.whatsapp{
-    display:inline-block;
-    margin-top:15px;
-    background:#25D366;
-    color:white;
-    padding:13px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-@media(max-width:600px){
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-
-    .item img{
-        height:210px;
-    }
-
-    header h1{
-        font-size:26px;
-    }
+.status {
+  text-align: center;
+  color: #d8b66a;
+  font-size: 12px;
+  min-height: 18px;
+  margin-top: 14px;
 }
 </style>
 </head>
 
 <body>
+<main class="card">
 
-<header>
-    <h1>☕ Örnek Cafe</h1>
-    <p>Dijital Menü</p>
-</header>
+  <div class="logo">ÖZEKİNCİ DİJİTAL</div>
 
-<div class="container">
+  <h1>Şerzan Özekinci</h1>
+  <div class="subtitle">Hesap bilgileri</div>
 
-    <!-- KAHVELER -->
-    <section class="category">
+  <div class="label">HESAP SAHİBİ</div>
 
-        <h2 class="category-title">☕ Kahveler</h2>
+  <div class="info-row">
+    <div class="name">Şerzan Özekinci</div>
+    <button class="copy-small"
+      aria-label="İsim ve soyismi kopyala"
+      onclick="copyText('Şerzan Özekinci', this)"
+      title="İsmi kopyala">▢</button>
+  </div>
 
-        <div class="menu-grid">
+  <div class="label">IBAN NUMARASI</div>
 
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Türk Kahvesi</h3>
-                    <p>Geleneksel Türk kahvesi</p>
-                    <div class="price">80 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Latte</h3>
-                    <p>Espresso ve süt köpüğü</p>
-                    <div class="price">110 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Cappuccino</h3>
-                    <p>Yoğun espresso ve süt köpüğü</p>
-                    <div class="price">120 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Ice Coffee</h3>
-                    <p>Soğuk kahve ve buz</p>
-                    <div class="price">125 TL</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- YİYECEKLER -->
-    <section class="category">
-
-        <h2 class="category-title">🍔 Yiyecekler</h2>
-
-        <div class="menu-grid">
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Hamburger</h3>
-                    <p>Özel sos, cheddar ve patates</p>
-                    <div class="price">220 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Patates Kızartması</h3>
-                    <p>Çıtır patates ve özel sos</p>
-                    <div class="price">90 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Karışık Tost</h3>
-                    <p>Kaşar, sucuk ve özel ekmek</p>
-                    <div class="price">130 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Pizza</h3>
-                    <p>Bol malzemeli özel pizza</p>
-                    <div class="price">240 TL</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- İÇECEKLER -->
-    <section class="category">
-
-        <h2 class="category-title">🥤 İçecekler</h2>
-
-        <div class="menu-grid">
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1629203849820-fdd70d49c38e?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Soğuk İçecek</h3>
-                    <p>Çeşitli gazlı içecekler</p>
-                    <div class="price">60 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Limonata</h3>
-                    <p>Taze limonlarla hazırlanır</p>
-                    <div class="price">70 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Milkshake</h3>
-                    <p>Çikolatalı özel milkshake</p>
-                    <div class="price">130 TL</div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85">
-                <div class="item-content">
-                    <h3>Çilekli Tatlı</h3>
-                    <p>Taze meyveli özel tatlı</p>
-                    <div class="price">150 TL</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- İLETİŞİM -->
-    <div class="contact">
-
-        <h2>Sipariş & Rezervasyon</h2>
-
-        <p>Detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
-
-        <a class="whatsapp"
-           href="https://wa.me/905380523343">
-           WhatsApp'tan Ulaş
-        </a>
-
+  <div class="info-row">
+    <div class="iban" id="iban">
+      TR00 0000 0000 0000 0000 0000 00
     </div>
+    <button class="copy-small"
+      aria-label="IBAN numarasını kopyala"
+      onclick="copyText('TR000000000000000000000000', this)"
+      title="IBAN'ı kopyala">▢</button>
+  </div>
 
-</div>
+  <div class="note">
+    Bilgileri yanlarındaki kopyalama simgelerine dokunarak
+    kolayca kopyalayabilirsin
+  </div>
+
+  <div class="status" id="status" aria-live="polite"></div>
+
+</main>
+
+<script>
+async function copyText(text, button) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.style.position = "fixed";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+
+      const success = document.execCommand("copy");
+      area.remove();
+
+      if (!success) throw new Error("Kopyalama başarısız");
+    }
+
+    document.getElementById("status").textContent =
+      "Başarıyla kopyalandı ✓";
+
+    const old = button.textContent;
+    button.textContent = "✓";
+
+    setTimeout(() => {
+      button.textContent = old;
+    }, 1500);
+
+  } catch (error) {
+    document.getElementById("status").textContent =
+      "Kopyalanamadı, lütfen tekrar dene";
+  }
+}
+</script>
 
 </body>
 </html>
